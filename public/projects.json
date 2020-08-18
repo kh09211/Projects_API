@@ -1,0 +1,66 @@
+[
+    {
+        "projectname": "Lazy Millennial Blog",
+        "link": "http:\/\/www.lazymillennial.me",
+        "github": "https:\/\/github.com\/kh09211\/Lazymillennial_Blog",
+        "filename": "screenshot_lazymillennial.jpeg",
+        "description": "The Lazy Millennial blog site is special because it was my first attempt to share a coded website live with the world. The website showcases my past technical projects and money making endevours. Originally written only in HTML and CSS, the site has gone through several updates including moving to Bootstrap4's grid and nav system for responsiveness on smaller screens, and PHP to add more structure by separating the site into components that can be worked on separately then included into one main index page. The site serves more as a projects portfolio than a blog.",
+        "techs": "HTML5, PHP, CSS3, Bootstrap4"
+    },
+    {
+        "projectname": "Kyleweb.dev Portfolio",
+        "link": "#",
+        "github": "http:\/\/github.com\/kh09211\/Kylewebdev_Portfolio",
+        "filename": "screenshot_kylewebdev2.jpeg",
+        "description": "Ironically, I couldn't build a portfolio website without crediting myself for the work. This mobile responsive single-page design website was created with HTML, CSS, some PHP, and Bootstrap 4's flexbox grid system. A separate CMS page makes adding future projects to the portfolio page possible without the need for ftp or ssh. Security is obtained with a hashed password and encrypted verification. The CMS uploads a photo to the correct directory using PHP and encodes project data into a JSON format file. The portfolio page then decodes it, creates an array from the contents, and loops through to display each project's data and screenshot photo.",
+        "techs": "HTML5, PHP, CSS3, Bootstrap4"
+    },
+    {
+        "projectname": "Chat App",
+        "link": "http:\/\/kyleweb.dev\/php_projects\/chatapp\/chat.php",
+        "github": "http:\/\/github.com\/kh09211\/PHP_Projects\/tree\/master\/chatapp",
+        "filename": "screenshot_chatapp.jpeg",
+        "description": "The Chat App is a simple chatroom built mostly with vanilla PHP. Some Javascript and jQuery was used for the AJAX and refresh timer. The app uses a MYSQL database to store comments and usernames. Then, when a new comment is submitted via form data, the POST header is parsed into an array. PHP's PDO database driver is used to securely connect to the database and make queries using prepared statements to protect against SQL Injection. The user's name is returned to the script via a query parameter. The app is mobile responsive using Bootstrap's flexbox grid. ",
+        "techs": "PHP, MYSQL, HTML5, Bootstrap4, Javascript"
+    },
+    {
+        "projectname": "Gallery App",
+        "link": "http:\/\/kyleweb.dev\/php_projects\/galleryapp\/index.php",
+        "github": "https:\/\/github.com\/kh09211\/PHP_Projects\/tree\/master\/galleryapp",
+        "filename": "Screenshot_galleryapp.jpeg",
+        "description": "The gallery app uses vanilla PHP in the Object Oriented OOP paradigm to create a dynamic CRUD type application. The app is mobile responsive and uses objects, namespaces, and Composer to autoload the classes. The database used is SQLite which utilizes a project local DB instead of a client\/server type. The website works by querying a table into an array then looping each row into a bootstrap column along with its corresponding photo. The upload tab allows the user to submit a file to the server and its filename and description into the database. Photos can also be removed from the galley. The form is resistant to SQL injection and uses a hashed password for verification.",
+        "techs": "PHP, SQLite, HTML5, CSS3, Bootstrap4"
+    },
+    {
+        "projectname": "Mike Sells Georgia Website",
+        "link": "http:\/\/mikesellsgeorgia.com",
+        "github": "https:\/\/github.com\/kh09211\/Mikesellsgeorgia_Website",
+        "filename": "Screenshot_mikesellsgeorgia.jpeg",
+        "description": "This brochure type  website was developed with a single-page design for a smooth user experience. The majority of the markup is with HTML5, bootstrap4's nav and grid system for mobile responsiveness, and some custom CSS to give the page a fresh look with fixed background photos that disappear as user scrolls to the next page. The contact form was written with vanilla PHP and sends an e-mail to the website owner using the Postfix mail daemon configured on an AWS Cloud EC2 server instance.",
+        "techs": "HTML5, PHP, CSS3, Bootstrap4"
+    },
+    {
+        "projectname": "Coronagram Social Media App",
+        "link": "http:\/\/coronagram.club",
+        "github": "https:\/\/github.com\/kh09211\/Coronagram",
+        "filename": "Screenshot_coronagram.jpeg",
+        "description": "Coronagram is a social media platform I created while in quarantine that is functionally similar to the Instagram site and scalable to handle many future users. The project uses the Laravel PHP framework for the back end, Vue.js Javascript framework for some of the front end, and SQLite for the relational database. Users are able to register, login, create and edit profiles, create and delete post with captions and photos, comment with other users, and both follow and be followed by other users. Other technologies used in the project are Composer, Bootstrap 4, Axios, Webpack.js, Node.js, and NPM.",
+        "techs": "PHP Laravel, Vue.js, Bootstrap 4, SQLite, Webpack.js"
+    },
+    {
+        "projectname": "Unemployment Portal",
+        "link": "http:\/\/unemployment.kyleweb.dev",
+        "github": "https:\/\/github.com\/kh09211\/Unemployment_Portal.git",
+        "filename": "Screenshot_unemployment2.jpeg",
+        "description": "What would a web developer do if they were stuck in quarantine? Maybe create an actually functional version of their state's unemployment website? That was my inspiration after encountering multiple errors on my own state's site. Applicants arrive at the login page and either login or register. After filling out some information, appeals are made within a particular sequence directed by the 'status' tab. Information is securely stored in the database, shown in the browser, and available for changes at any time by the user. The app uses Laravel PHP framework for the back-end, with Bootstrap4 on the front-end, and MYSQL for the database.",
+        "techs": "PHP Laravel, Bootstrap 4, HTML5, CSS3"
+    },
+    {
+        "projectname": "IndiGrowth Workout App",
+        "link": "http:\/\/beta.kyleweb.dev",
+        "github": "private",
+        "filename": "Screenshot_indigrowth.jpeg",
+        "description": "This custom workout routine application was built for client IndiGrowth Health and Wellness. The site allows the administrator (IndiGrowth) to register users once they subscribe to the service, and the user can create custom workout routines complete with video descriptions. The admin can create, modify, and delete new exercises that will show up on the user's page for selection. Users can easily change routines and their old routine is archived for later viewing. Laravel framework and PHP were used for the back end along with a MYSQL database. The front end was written with bootstrap 4 and custom CSS and HTML. ",
+        "techs": "PHP Laravel, Bootstrap 4, HTML5, CSS3"
+    }
+]
