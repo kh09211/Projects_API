@@ -1,6 +1,7 @@
 <?php
 
 use \Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,14 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/projects', 'ProjectController@index');
+
+$router->post('/login', function(Request $request) {
+    // validate the incoming data
+    $this->validate($request, ['password' => ['string','required']]);
+
+    // check password against config var and return boolean
+    return (Hash::check($request->password, config('app.PASS'))) ? "true" : "false";
+});
 
 
 $router->post('/mail/contact', function(Request $request) {
