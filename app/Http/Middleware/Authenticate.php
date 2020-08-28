@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
+use App\Http\Controllers\Controller;
 
 class Authenticate
 {
@@ -35,9 +36,19 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        // set default password in case not given in request
+        $password = $request->input('password', 'none');
+
+        // Check that the password is correct before allowing access to routes with assigned auth middleware
+        if (! Controller::checkPass($password)) {
+            return response('Unauthorized.', 401);
+        }
+
+        /*
         if ($this->auth->guard($guard)->guest()) {
             return response('Unauthorized.', 401);
         }
+        */
 
         return $next($request);
     }

@@ -1,7 +1,7 @@
 <?php
 
-use \Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +18,31 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+//test route
+$router->post('/test', ['middleware' => 'auth', function() {
+    return config('app.name');
+}]);
+
+// Reorder projects
+$router->post('/projects/reorder', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@reorder'
+]);
+
+
+
+
+//Below do not requre auth
+
 $router->get('/projects', 'ProjectController@index');
+
 
 $router->post('/login', function(Request $request) {
     // validate the incoming data
     $this->validate($request, ['password' => ['string','required']]);
 
-    // check password against config var and return boolean
-    return (Hash::check($request->password, config('app.PASS'))) ? "true" : "false";
+    // check password against config var and return boolean NOTE: moved function to Controller class NOTE: Returns boolean true or false
+    return Controller::checkPass($request->password);
 });
 
 
