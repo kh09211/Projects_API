@@ -29,6 +29,18 @@ $router->post('/projects/reorder', [
     'uses' => 'ProjectController@reorder'
 ]);
 
+// Create new project
+$router->post('/projects/create', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@create'
+]);
+
+// delete project
+$router->delete('/projects/{id}/delete', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@delete'
+]);
+
 
 
 
