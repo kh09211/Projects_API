@@ -18,10 +18,15 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+
 //test route
-$router->post('/test', ['middleware' => 'auth', function() {
+/*$router->post('/test', ['middleware' => 'auth', function() {
     return config('app.name');
 }]);
+*/
+$router->get('/test', function() {
+    return config('app.name');
+});
 
 // Reorder projects
 $router->post('/projects/reorder', [
@@ -42,10 +47,21 @@ $router->delete('/projects/{id}/delete', [
 ]);
 
 
+// edit project store
+$router->post('/projects/{id}/store', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@store'
+]);
 
+// photo uploads
+$router->post('/projects/{id}/photo-upload', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@photoUpload'
+]);
 
-//Below do not requre auth
+//Below routes do not requre auth
 
+// index of projects
 $router->get('/projects', 'ProjectController@index');
 
 

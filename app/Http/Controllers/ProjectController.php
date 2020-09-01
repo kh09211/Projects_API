@@ -109,4 +109,11 @@ class ProjectController extends Controller
     private function projectsSortedByOrder() {
         return Project::all()->sortBy('order')->values()->all();
     }
+
+    public function photoUpload(Request $request, $id) {
+        // process file uploads and update the project
+        $project = Project::find($id);
+        
+        return var_dump($project);
+    }
 }
