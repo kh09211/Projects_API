@@ -61,6 +61,26 @@ class ProjectController extends Controller
         return $this->projectsSortedByOrder();
     }
 
+    public function update(Request $request, $id) {
+        // validate the incoming data
+        $this->validate($request, ['project' => ['array','required']]);
+        $reqProject = $request->input('project');
+
+        //fetch the edited project and update it in the database
+        $project = Project::find($id);
+
+        $project->name = $reqProject['name'];
+        $project->link = $reqProject['link'];
+        $project->github = $reqProject['github'];
+        $project->description = $reqProject['description'];
+        $project->techs = $reqProject['techs'];
+        $project->save();
+
+        //return to the front end the latest projects array
+        return $this->projectsSortedByOrder();
+        
+    }
+
     public function reorder(Request $request) {
         // get projects sorted by order
         $projects = Project::all();

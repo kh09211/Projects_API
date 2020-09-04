@@ -35,22 +35,22 @@ $router->post('/projects/reorder', [
 ]);
 
 // Create new project
-$router->post('/projects/create', [
+$router->post('/projects', [
     'middleware' => 'auth',
     'uses' => 'ProjectController@create'
 ]);
 
 // delete project
-$router->delete('/projects/{id}/delete', [
+$router->delete('/projects/{id}', [
     'middleware' => 'auth',
     'uses' => 'ProjectController@delete'
 ]);
 
 
-// edit project store
-$router->post('/projects/{id}/store', [
+// update edited project
+$router->patch('/projects/{id}', [
     'middleware' => 'auth',
-    'uses' => 'ProjectController@store'
+    'uses' => 'ProjectController@update'
 ]);
 
 // photo uploads
