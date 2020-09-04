@@ -113,7 +113,41 @@ class ProjectController extends Controller
     public function photoUpload(Request $request, $id) {
         // process file uploads and update the project
         $project = Project::find($id);
+
+        if ($request->file('image')->isValid()) {
+            // make a unique filename
+            $picName = $request->file('image')->getClientOriginalName();
+            $picName = uniqid() . '_' . $picName;
+
+            // move the file to the destination path
+            $request->file('image')->move('photos/', $picName);
+
+            // add photo to project
+            $photoArr = $project->photos;
+            $photoArr[] = $picName;
+            $project->photos = $photoArr;
+            $project->save();
+        }
         
-        return var_dump($project);
+        return $this->projectsSortedByOrder();
+    }
+
+    public function photoDelete($id, $photoIndex) {
+        $project = Project::find($id);
+
+        $photoArr = $project->photos; // since we are changing a casted array, we first call the property and set it to a variable
+
+        $photoFilename = $photoArr[$photoIndex]; // get the filename for deletion
+
+        array_splice($photoArr, $photoIndex, 1); // remove photo from array
+        $project->photos = $photoArr;
+        $project->save();
+
+        // delete actual file from photosystem
+        unlink('photos/' . $photoFilename);
+
+        // return to front end an updated projects array
+        return $this->projectsSortedByOrder();
+        
     }
 }

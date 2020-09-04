@@ -59,6 +59,12 @@ $router->post('/projects/{id}/photo-upload', [
     'uses' => 'ProjectController@photoUpload'
 ]);
 
+// delete photo
+$router->delete('/projects/{id}/photo-delete/{photoIndex}', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@photoDelete'
+]);
+
 //Below routes do not requre auth
 
 // index of projects
