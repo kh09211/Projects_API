@@ -17,7 +17,7 @@ class CorsMiddleware
     public function handle($request, Closure $next)
     {
         $headers = [
-            'Access-Control-Allow-Origin'      => '*',
+            'Access-Control-Allow-Origin'      => config('app.FRONTEND_URL'),
             'Access-Control-Allow-Methods'     => 'POST, GET, OPTIONS, PUT, DELETE, PATCH',
             'Access-Control-Allow-Credentials' => 'true',
             'Access-Control-Max-Age'           => '86400',

@@ -19,14 +19,15 @@ $router->get('/', function () use ($router) {
 });
 
 
-//test route
-/*$router->post('/test', ['middleware' => 'auth', function() {
+/* TEST ROUTES
+$router->post('/test', ['middleware' => 'auth', function() {
     return config('app.name');
 }]);
-*/
+
 $router->get('/test', function() {
     return config('app.name');
 });
+*/
 
 // Reorder projects
 $router->post('/projects/reorder', [

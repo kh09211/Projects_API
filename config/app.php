@@ -109,7 +109,9 @@ return [
     'cipher' => 'AES-256-CBC',
 
     
-    //hashed password to login to app
-	'PASS' => env('PASS_HASHED')
+    // hashed password to login to app
+	'PASS' => env('PASS_HASHED'),
     
+    // URL of front end for CORS middleware
+    'FRONTEND_URL' => env('FRONTEND_URL')
 ];
