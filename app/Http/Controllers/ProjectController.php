@@ -74,6 +74,7 @@ class ProjectController extends Controller
         $project->github = $reqProject['github'];
         $project->description = $reqProject['description'];
         $project->techs = $reqProject['techs'];
+        $project->visible = $reqProject['visible'];
         $project->save();
 
         //return to the front end the latest projects array
