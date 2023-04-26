@@ -92,10 +92,10 @@ $router->post('/mail/contact', function(Request $request) {
 
     // make vars and send email
     $to = 'kyle@kyleweb.dev';
-	$subject = '!!!! KYLEWEB.DEV: NEW MESSAGE FROM: ' . $request->input('name') . ' !!!!';
+	$subject = 'KYLEWEB.DEV: NEW MAIL FROM: ' . $request->input('name');
 	$message = 'Clients email: ' . $request->input('email') . "\r\n" . $request->input('name') . ' says: ' . $request->input('textbox');
 	$headers = array (
-		'From' => 'kylewebdevmail@gmail.com',
+		'From' => 'kyle@kyleweb.dev',
 		'Reply-To' => $request->input('email'),
 		'X-Mailer' => 'PHP/' . phpversion()
 		);
